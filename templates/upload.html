@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>LegalatorAI Admin Panel</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap/bootstrap.css') }}">
+    <script type="text/javascript" src="{{url_for('static', filename='js/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap/bootstrap.js')}}"></script>
+</head>
+
+
+<body>
+  <div class="container-fluid" style="padding: 1%;">
+    <h2>Legalator.AI Admin Panel</h2>
+    <a href="/">Go Back</a>
+
+    <div class="row" style="margin-top:1%;">
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+          <div class="form-row">
+            <label for="pdf-file">Upload Files</label>
+          </div>
+          <div class="form-row">
+            <div class="form-row">
+              <input type="text" name="folder_path"style="width:30%;" placeholder="Enter path to folder of chapters..." required>
+            </div>
+            <div class="form-row">
+              <input type="text" name="document_title"style="width:30%;" placeholder="Enter document title" required>
+            </div>
+            <div class="form-row">
+              <p>Document Type:</p>
+              <input type="radio" id="legalbook" name="document_type" value="Legal Book" checked>
+              <label for="legalbook">Doxplore</label><br>
+              <input type="radio" id="caselaw" name="document_type" value="Case Law">
+              <label for="caselaw">CaseX</label><br>
+            </div>
+            <div class="form-row">
+              <input type="submit" class="btn btn-primary" style="width:30%; margin-top:1%;" value="Upload!" >
+            </div>
+          </div>
+      </form>
+    </div>
+
+  </div>
+</body>
